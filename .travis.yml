@@ -7,7 +7,9 @@ branches:
     - master
     - /release-.*/
 
-script: "wolframscript -f Test.m"
+script:
+  - "wolframscript -f Test.m"
+  - "wolframscript -c '10!'"
 
 notifications:
   email: false
