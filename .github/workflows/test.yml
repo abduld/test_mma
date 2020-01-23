@@ -35,3 +35,5 @@ jobs:
         run: wolframscript -f Test.m
       - name: Run Wolfram Example Command
         run: wolframscript -c '10!'
+      - name: Run Wolfram Example Compiler
+        run: wolframscript -f Compile.m
