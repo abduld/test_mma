@@ -29,4 +29,4 @@ before_install:
   - WolframKernel -machineid
   - which WolframKernel
   # activate
-  - printf '1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
+  - printf '\n$MATH_ACTIVATION_KEY\n$MATH_PASSWORD\n' | WolframKernel
