@@ -1,0 +1,27 @@
+language: bash
+os:
+  - linux
+
+branches:
+  only:
+    - master
+    - /release-.*/
+
+script: "wolframscript -f Test.m"
+
+notifications:
+  email: false
+
+cache:
+  directories:
+    - /home/travis/.download/
+
+before_install:
+  # download and install Wolfram Engine
+  - wget -O $HOME/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
+  - printf "\n\n" | sudo bash $HOME/WolframEngine.sh
+  # information
+  - WolframKernel -version
+  - WolframKernel -machineid
+  # activate
+  - printf '\n1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
