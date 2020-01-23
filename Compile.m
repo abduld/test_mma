@@ -5,7 +5,7 @@ iCollatz = Function[{Typed[n, "Integer64"]},
    m = If[Mod[m, 2] === 0, Quotient[m, 2], 3*m + 1];
    AppendTo[list, m]]; list]
  ];
-Collatz = FunctionCompile[Collatz];
+Collatz = FunctionCompile[iCollatz];
 
 Print[10 -> Collatz[10]];
 Print[20 -> Collatz[20]];
