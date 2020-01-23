@@ -22,7 +22,6 @@ before_install:
   - |
     if [[ ! -f "$HOME/.download/WolframEngine.sh" ]]; then
       wget -O $HOME/.download/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
-      exit 1
     fi
   - printf "\n\n" | sudo bash $HOME/.download/WolframEngine.sh
   # information
