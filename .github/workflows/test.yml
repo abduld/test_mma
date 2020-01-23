@@ -32,7 +32,7 @@ jobs:
       - name: Activate Wolfram Engine
         run: printf '\n${{ secrets.MATH_ACTIVATION_KEY }}\n${{ secrets.MATH_PASSWORD }}\n' | WolframKernel
       - name: Run Wolfram Example Script
-        run: wolframscript -f Test.m
+        run: wolframscript -f SystemID.m
       - name: Run Wolfram Example Command
         run: wolframscript -c '10!'
       - name: Run Wolfram Example Compiler
