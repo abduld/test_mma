@@ -30,6 +30,6 @@ jobs:
       - name: Find Wolfram Engine
         run: which WolframKernel
       - name: Activate Wolfram Engine
-        run: printf '${{ secrets.MATH_ACTIVATION_KEY }}\n${{ secrets.MATH_PASSWORD }}\n' | WolframKernel
+        run: printf '\n${{ secrets.MATH_ACTIVATION_KEY }}\n${{ secrets.MATH_PASSWORD }}\n' | WolframKernel
       - name: Run Wolfram Example
         run: wolframscript -f Test.m
