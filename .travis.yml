@@ -8,8 +8,9 @@ branches:
     - /release-.*/
 
 script:
-  - "wolframscript -f Test.m"
+  - "wolframscript -f SystemID.m"
   - "wolframscript -c '10!'"
+  - "wolframscript -f Compile.m"
 
 notifications:
   email: false
