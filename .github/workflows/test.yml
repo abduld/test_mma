@@ -15,7 +15,7 @@ jobs:
         id: cache-download
         with:
           path: ~/.cache
-          key: ${{ runner.os }}-download-${{ hashFiles('~/.cache/**') }}
+          key: ${{ runner.os }}-download-${{ hashFiles('**') }}
           restore-keys: |
             ${{ runner.os }}-download-
       - name: Download Wolfram Engine
