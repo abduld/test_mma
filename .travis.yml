@@ -18,8 +18,8 @@ cache:
 
 before_install:
   # download and install Wolfram Engine
-  - wget -O $HOME/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
-  - printf "\n\n" | sudo bash $HOME/WolframEngine.sh
+  - wget -O $HOME/.download/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
+  - printf "\n\n" | sudo bash $HOME/.download/WolframEngine.sh
   # information
   - WolframKernel -version
   - WolframKernel -machineid
