@@ -14,9 +14,10 @@ notifications:
 
 cache:
   directories:
-    - /home/travis/.download/
+    - $HOME/.download/
 
 before_install:
+  - echo $HOME
   # download and install Wolfram Engine
   - |
     if [[ -f "$HOME/.download/WolframEngine.sh" ]]; then
