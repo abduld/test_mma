@@ -4,27 +4,26 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Download Wolfram Engine
-      run: wget -O WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
-    - name: Install Wolfram Engine
-      run: printf "\n\n" | sudo bash $HOME/.download/WolframEngine.sh
-    - name: Wolfram Engine Information
-      run: |
-        WolframKernel -version
-        WolframKernel -machineid
-    - name: Find Wolfram Engine
-      run: which WolframKernel
-    - name: Activate Wolfram Engine
-      run: printf '1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download Wolfram Engine
+        run: wget -O WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
+      - name: Install Wolfram Engine
+        run: printf "\n\n" | sudo bash WolframEngine.sh
+      - name: Wolfram Engine Information
+        run: |
+          WolframKernel -version
+          WolframKernel -machineid
+      - name: Find Wolfram Engine
+        run: which WolframKernel
+      - name: Activate Wolfram Engine
+        run: printf '1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
