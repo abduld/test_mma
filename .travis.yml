@@ -24,4 +24,4 @@ before_install:
   - WolframKernel -version
   - WolframKernel -machineid
   # activate
-  - printf '\n1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
+  - echo '\n1001-1010-456789\n2039-378-645:8::20200630\n' | WolframKernel
