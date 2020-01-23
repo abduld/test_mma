@@ -20,7 +20,7 @@ before_install:
   - echo $HOME
   # download and install Wolfram Engine
   - |
-    if [[ -f "$HOME/.download/WolframEngine.sh" ]]; then
+    if [[ ! -f "$HOME/.download/WolframEngine.sh" ]]; then
       wget -O $HOME/.download/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
       exit 1
     fi
