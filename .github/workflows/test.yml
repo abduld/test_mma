@@ -9,20 +9,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Create Download Directory
-        run: mkdir -p $HOME/.cache
-      - uses: actions/cache@v1
-        id: cache-download
-        with:
-          path: ~/.cache
-          key: ${{ runner.os }}-download-${{ hashFiles('**') }}
-          restore-keys: |
-            ${{ runner.os }}-download-
       - name: Download Wolfram Engine
-        if: steps.cache-download.outputs.cache-hit != 'true'
-        run: wget -O ~/.cache/WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
+        run: wget -O WolframEngine.sh https://account.wolfram.com/download/public/wolfram-engine/desktop/LINUX
       - name: Install Wolfram Engine
-        run: printf "\n\n" | sudo bash ~/.cache/WolframEngine.sh
+        run: printf "\n\n" | sudo bash WolframEngine.sh
       - name: Wolfram Engine Information
         run: |
           WolframKernel -version
